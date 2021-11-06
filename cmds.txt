@@ -1,0 +1,44 @@
+ember generate component map --with-component-class
+to generate a component with everything needed using "--with-component-class"
+
+ember generate component rental/image
+
+
+1. Normal router:
+	a) The "index.hbs" are corresponds to "/", the components in "application.hbs"
+	    applies for every page.
+
+	b) The router "template" and "path" exists in the router.js file. 
+	    Which when go to the url "path" will invoke the template content, 
+                    The template content is a hbs file, define the looks, while the corresponding
+	    js file in routers are where the data lies, eg. the fetch from API, or self-defined data
+
+	c) <LinkTo> make it possible to jump between routers, the @route parameter
+	   passes the "template" value in b), that is equivalent to invoke that "template.hbs"
+                   file. For dynamic router, <LinkTo> need to pass another parameter : @model, and
+	   pass a chunck of data, normally an object with "id", and then the actual path in 
+	   the url will be customerized with the object "id" . Also note that, when define a
+	   dynamic router in router.js, the path should be "{ path: '/rentals/:rental_id' }", what
+	  come after ":" is customerized by the object "id".
+
+	d) About the sturcture, if appears to me that every page has its own 1. Router defined
+	    in router.js. 2. A .hbs file in templates folder, make  sure the file name and router is the
+                    same and avoid use capital letter. 3. A js file in routes folder.
+
+	    For every components, it is defined in the components folder, and self defined components
+	    file contains no capital letter, but when invoke, should the first letter of the file should be
+	    captialized. And when naming a component file, if its two letters, eg: people list, it should 
+	    be named as people-list.hbs, so does the corresponding .js file. But when invoke it, it is
+                    <PeopleList>, what after "-" in filename should be captialized.
+
+	    When invoking a component defined in a component folder, it should be invoked by 
+	   <Foldername :: Componentname />
+
+
+	e) in router, it can only have model, if want to add actions, then have a js file in controller folder.
+	   @tracked have the same effect as useState, when the tracked value changed, the dom will re-render
+	   @action is to define functions for a action such as click. 
+	   "ember g controller name of the router"
+
+	f) service "ember g service name of the a service", allow app to pass data across components
+
