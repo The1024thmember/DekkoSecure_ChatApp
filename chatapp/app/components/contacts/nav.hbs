@@ -1,0 +1,8 @@
+<div class="nav">
+    {{#each this.contact as |contact|}}
+      <div>
+        <div class="status {{contact.status}}"></div>
+        <span>{{contact.userName}}</span>
+      </div>
+    {{/each}}
+</div>

@@ -1,0 +1,9 @@
+
+<div class="dropdown">
+  <input class="dropinput" value = {{this.people}} />
+  <div class="dropdown-content">
+    {{#each @people as |person|}}
+      <p {{on "click" this.choosePeople}}>{{person.userName}}</p>
+    {{/each}}
+  </div>
+</div>

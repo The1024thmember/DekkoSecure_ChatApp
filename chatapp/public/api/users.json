@@ -1,0 +1,26 @@
+[
+  {
+    "userName": "Alice",
+    "status": 2
+  },
+  {
+    "userName": "Bob",
+    "status": 0
+  },
+  {
+    "userName": "Dean",
+    "status": 1
+  },
+  {
+    "userName": "Eve",
+    "status": 0
+  },
+  {
+    "userName": "Jim",
+    "status": 0
+  },
+  {
+    "userName": "Kylie",
+    "status": 2
+  }
+]
