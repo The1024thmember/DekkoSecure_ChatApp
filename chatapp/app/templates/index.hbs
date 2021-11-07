@@ -1,6 +1,6 @@
 <span>Please signIn as one of the followings</span>
 <Identity::Dropdown @people={{@model}} />
 <span>, then click sign in to start SoChat journey.</span>
-<LinkTo @route="chatwindow" @model={{this.getInitalPeople}} class="link">
+<LinkTo @route="chatwindow" @model={{this.getFousedPeople}} class="link">
     <button type="button">Sign In</button>
 </LinkTo>

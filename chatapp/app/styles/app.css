@@ -65,6 +65,16 @@
 
 
   /*********************************************chat Window**********************************/
+   /*********************header*********************/
+  .header-container{
+    width:800px;
+    height:40px;
+    background-color: #a2a2a2;
+    display: flex;
+    flex-direction: row;
+  }
+
+
   /*********************nav bar*********************/
   /* Status Dot */
   .contacts-nav {
@@ -73,7 +83,7 @@
 
   .vertical {
     height: 500px;
-    width:300px;
+    width:200px;
     overflow-y: auto;
   }
 
@@ -93,10 +103,12 @@
     padding-right: 20px;
     padding-top: 10px;
     padding-bottom: 10px;
+    cursor: pointer;
   }
 
-  .contacts-item:hover{
+  .onfocus {
     background-color: #a2a2a2;
+    font-weight: bold;
   }
 
   .contacts-status {
@@ -131,8 +143,8 @@
     background: #3e8e41;
     position: absolute;
     border-radius: .4em;
-    top:100px;
-    left:100px;
+    top:400px;
+    left:700px;
   }
   
   .popup:after {
@@ -157,6 +169,28 @@
   
   .chat-container {
     border:1px solid black;
-    width:1000px;
-    height:700px;
+    width:800px;
+    height:540px;
+  }
+
+  .chat-container-inner {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .chat-container-inside {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .messagehistory {
+    width:600px;
+    height:350px;
+    border:1px solid black;
+  }
+  /*******reply box*********/
+  .reply {
+    width:600px;
+    height:146px;
+    border:1px solid black;
   }

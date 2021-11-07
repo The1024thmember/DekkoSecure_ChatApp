@@ -2,8 +2,9 @@ import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
 export default class PeopleService extends Service {
   @tracked contacts = [];
-  @tracked identity = '';
   @tracked otherPeople = [];
+  @tracked identity = '';
+  @tracked focused = '';
 
   getContacts(gotContacts) {
     this.contacts = [...gotContacts];
@@ -13,5 +14,8 @@ export default class PeopleService extends Service {
   }
   getIdentity(gotIdentity) {
     this.identity = gotIdentity;
+  }
+  setFoused(focused) {
+    this.focused = focused;
   }
 }

@@ -1,4 +1,4 @@
-<div class='contacts-item'>
+<div class="contacts-item {{@contact.style}}" {{ on 'click' (fn this.setFocusPeople @contact.userName)}}>
     <div class="contacts-status {{@contact.status}}"></div>
     <span>{{@contact.userName}}</span>
 </div>

@@ -1,5 +1,12 @@
 <div class="chat-container" {{ on "mousemove" this.getDownPosition}}>
-    <Contacts::Nav />
+    <Chatwindow::Header @identity={{this.getIdentity}}/>
+    <div class="chat-container-inner">
+        <Contacts::Nav @contacts={{this.getContacts}}/>
+        <div class="chat-container-inside">
+            <Chatwindow::Messagehistory @history = {{@chatdata}} />
+            <Chatwindow::Replybox />
+        </div>
+    </div>
     <Popup::Messagebox />
     <Popup::Messagebox />
 </div>
