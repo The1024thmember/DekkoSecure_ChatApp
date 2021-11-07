@@ -1,8 +1,5 @@
-<div class="nav">
+<div class="contacts-nav horizontal">
     {{#each this.contact as |contact|}}
-      <div>
-        <div class="status {{contact.status}}"></div>
-        <span>{{contact.userName}}</span>
-      </div>
+      <Contacts::Item @contact={{contact}}/>
     {{/each}}
 </div>
