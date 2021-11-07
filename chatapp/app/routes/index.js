@@ -13,7 +13,9 @@ export default class SignRoute extends Route {
     };
     let response = await fetch('/api/users.json', settings);
     let data = await response.json();
+    
     this.people.getContacts(data);
+
     return data;
   }
 }

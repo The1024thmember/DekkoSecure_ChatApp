@@ -5,11 +5,26 @@ import { inject as service } from '@ember/service';
 
 export default class DropDownComponent extends Component {
   @service('people') confirmPeople;
-  @tracked people = 'Alice';
+  @tracked people = '';
   @action
   choosePeople(event) {
-    console.log(event.target.innerHTML);
     this.people = event.target.innerHTML;
     this.confirmPeople.getIdentity(event.target.innerHTML);
+
+    let contacts = [];
+    this.confirmPeople.contacts.forEach((element) => {
+      if (element.userName !== this.confirmPeople.identity) {
+        let status;
+        if (element.status === 0) {
+          status = 'active';
+        } else if (element.status === 1) {
+          status = 'busy';
+        } else {
+          status = 'offline';
+        }
+        contacts.push({ userName: element.userName, status: status });
+      }
+    });
+    this.confirmPeople.getOtherPeople(contacts);
   }
 }

@@ -4,11 +4,9 @@ import { inject as service } from '@ember/service';
 
 export default class SignController extends Controller {
   @service people;
-  @action
-  confirmIdentity(event) {
-    console.log(
-      'Go to the chat window with identity as ',
-      this.people.identity
-    );
+  get getInitalPeople(){
+    if (this.people.identity){
+      return this.people.otherPeople[0].userName;
+    }
   }
 }

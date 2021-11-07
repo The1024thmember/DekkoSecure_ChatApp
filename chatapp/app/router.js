@@ -7,5 +7,5 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
-  this.route('chatwindow');
+  this.route('chatwindow', { path: '/chat/:contact_name' });
 });
