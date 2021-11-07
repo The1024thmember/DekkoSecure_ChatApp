@@ -16,15 +16,27 @@ export default class MessageBoxComponent extends Component {
     };
     get safeStyle() {
         if (this.move){
-            return htmlSafe(`top: ${this.escapeCSS(this.mouse.position[1])}px; left: ${this.escapeCSS(this.mouse.position[0])}px`);
+            return htmlSafe(`top: ${this.escapeCSS(this.mouse.position[1]-5)}px; left: ${this.escapeCSS(this.mouse.position[0]-5)}px`);
         }
         else{
-            return htmlSafe(`top: ${this.escapeCSS(this.lastLocation[1])}px; left: ${this.escapeCSS(this.lastLocation[0])}px`);
+            return htmlSafe(`top: ${this.escapeCSS(this.lastLocation[1]-5)}px; left: ${this.escapeCSS(this.lastLocation[0]-5)}px`);
         }
     };
     escapeCSS(css) {
         return css; 
     };
+
+    @action
+    handleUp(){
+        if (this.move){
+            this.setLastLocation(this.mouse.position);
+        }
+        this.setMove(false);
+    }
+    @action
+    handleDown(){
+        this.setMove(true);
+    }
 
     @action
     handleClick(){

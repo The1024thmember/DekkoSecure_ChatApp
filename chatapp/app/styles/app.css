@@ -121,10 +121,31 @@
     height:100px;
     background: #3e8e41;
     position: absolute;
+    border-radius: .4em;
     top:100px;
     left:100px;
   }
+  
+  .popup:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border: 20px solid transparent;
+    border-top-color: #3e8e41;
+    border-bottom: 0;
+    margin-left: -20px;
+    margin-bottom: -20px;
+  }
 
+  .pin {
+    width:20px;
+    height:20px;
+    background-color: #ce792b;
+  }
+  
   .chat-container {
     border:1px solid black;
     width:1000px;
