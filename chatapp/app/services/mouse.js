@@ -6,4 +6,5 @@ export default class MouseService extends Service {
   updatePosition(clickedPosition) {
     this.position = [...clickedPosition];
   }
+
 }

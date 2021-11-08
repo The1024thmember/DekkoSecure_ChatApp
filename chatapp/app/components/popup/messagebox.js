@@ -7,7 +7,7 @@ import { inject as service } from '@ember/service';
 export default class MessageBoxComponent extends Component {
   @service mouse;
   @tracked move = false;
-  @tracked lastLocation = this.mouse.position;
+  @tracked lastLocation = this.mouse.position; //need to change a customrized value, otherwise the popup will follow the cursor
   @service router;
   @service people;
   @service chatdata;
@@ -47,14 +47,6 @@ export default class MessageBoxComponent extends Component {
   @action
   handleDown() {
     this.setMove(true);
-  }
-
-  @action
-  handleClick() {
-    if (this.move) {
-      this.setLastLocation(this.mouse.position);
-    }
-    this.setMove(!this.move);
   }
 
   @action

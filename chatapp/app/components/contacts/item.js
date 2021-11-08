@@ -6,8 +6,10 @@ export default class ChatwithComponent extends Component {
   @service people;
   @service router;
   @action
-  setFocusPeople(name, event) {
-    this.people.setFoused(name);
-    this.router.transitionTo('chatwindow', `${name}`);
+  setFocusPeople(name, enable, event) {
+    if(enable){
+      this.people.setFoused(name);
+      this.router.transitionTo('chatwindow', `${name}`);
+    }
   }
 }
