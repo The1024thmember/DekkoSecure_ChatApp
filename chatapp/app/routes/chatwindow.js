@@ -10,7 +10,7 @@ export default class ChatwindowRoute extends Route {
     let response = await fetch(`/api/${this.people.identity}.json`);
     [data] = await response.json();
     this.chatdata.setOld(data.sender,data.date,data.message);
-
+    console.log("data:",data);
     setInterval(async () => {
       let response = await fetch(`/api/${this.people.identity}.json`);
       [data] = await response.json();
