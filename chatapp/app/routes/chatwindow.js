@@ -16,5 +16,13 @@ export default class ChatwindowRoute extends Route {
       [data] = await response.json();
       this.chatdata.setOld(data.sender,data.date,data.message);
     }, 1000);
+    const keys = Object.keys(this.chatdata.current);
+    const temp = [];
+    keys.forEach((key)=>{
+      if (this.chatdata.current[key]){
+        temp.push({"sender":key,"message":this.chatdata.current[key]});
+      }
+    })
+    return temp;
   }
 }

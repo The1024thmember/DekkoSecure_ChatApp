@@ -7,21 +7,13 @@ export default class ChatwithComponent extends Component {
   @service mouse;
   @service people;
   @service chatdata;
+  /*
   @tracked current;
 
   setCurrent(value){
     this.current = value;
   };
-
-  get getIdentity() {
-    let identity = { userName: this.people.identity, status: 'active' };
-    return identity;
-  };
-
-  get getContacts() {
-    return { contacts: this.people.otherPeople, focused: this.people.focused };
-  };
-
+    
   get getCurrent(){
     const keys = Object.keys(this.chatdata.current);
     const temp = [];
@@ -32,6 +24,16 @@ export default class ChatwithComponent extends Component {
     })
     this.setCurrent(temp);
     return this.current;
+  };
+  */
+
+  get getIdentity() {
+    let identity = { userName: this.people.identity, status: 'active' };
+    return identity;
+  };
+
+  get getContacts() {
+    return { contacts: this.people.otherPeople, focused: this.people.focused };
   };
 
   get getHistory() {

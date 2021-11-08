@@ -7,7 +7,7 @@
             <Chatwindow::Replybox {{ on 'change' this.setReply}} />
         </div>
     </div>
-    {{#each this.getCurrent as |message|}}
+    {{#each @newMessage as |message|}}
       <Popup::Messagebox @message={{message}}/>
     {{/each}}
 </div>

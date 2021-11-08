@@ -61,9 +61,7 @@ export default class MessageBoxComponent extends Component {
   markAsRead(contact,message) {
     this.people.setFoused(contact);
     this.router.transitionTo('chatwindow', `${contact}`);
-    console.log("before:",this.chatdata.current);
     this.chatdata.setCurrent(contact,'');
     this.chatdata.setHistory(contact,[1,message]);
-    console.log("after:",this.chatdata.current);
   }
 }
