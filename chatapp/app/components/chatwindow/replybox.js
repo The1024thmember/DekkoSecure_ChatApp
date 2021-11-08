@@ -10,6 +10,7 @@ export default class StatusmenComponent extends Component {
 
   @action
   updateValue(event) {
+    this.inputValue = event.target.value;
     this.chatdata.setUnsend(this.people.focused,event.target.value);
     console.log("this.people.focused:",this.people.focused);
     console.log("this.chatdata.unsend:",this.chatdata.unsend[this.people.focused]);
@@ -29,7 +30,7 @@ export default class StatusmenComponent extends Component {
       var url = new URL('https://sochat.xyz/SoChat/messages?');
       const params = {'sender':this.people.identity,
                       'recipient': this.people.focused,
-                      'message': Math.random().toString(36).replace(/[^a-z]+/g, '').substr(0, 5),
+                      'message': this.inputValue,
                     };
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
       let response = await fetch(url, settings);
