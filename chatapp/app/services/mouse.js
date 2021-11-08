@@ -3,8 +3,9 @@ import { tracked } from '@glimmer/tracking';
 export default class MouseService extends Service {
   @tracked position = [];
 
-  updatePosition(clickedPosition) {
-    this.position = [...clickedPosition];
+  //get the cursor's current location
+  updatePosition(position) {
+    this.position = [...position];
   }
 
 }

@@ -3,7 +3,7 @@
     <div class="chat-container-inner">
         <Contacts::Nav @contacts={{this.getContacts}}/>
         <div class="chat-container-inside">
-            <Chatwindow::Messagehistory @history = {{this.getHistory}} />
+            <Chatwindow::Messagehistory @history = {{this.history}} />
             <Chatwindow::Replybox {{ on 'change' this.setReply}} />
         </div>
     </div>
