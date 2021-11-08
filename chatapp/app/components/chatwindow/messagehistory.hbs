@@ -1,6 +1,8 @@
 <div class="messagehistory">
     history message ... 
-    {{#each @history as |message|}}
-      <p >{{message.message}}</p>
+    {{#each @history as |allMessages|}}
+      {{#each allMessages as |message|}}
+        <p>{{message}}</p>
+      {{/each}}
     {{/each}}
 </div>

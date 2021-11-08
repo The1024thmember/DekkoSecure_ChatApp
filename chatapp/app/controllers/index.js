@@ -4,9 +4,9 @@ import { inject as service } from '@ember/service';
 
 export default class SignController extends Controller {
   @service people;
-  get getFousedPeople(){
-    if (this.people.identity){
-      console.log("focused:",this.people.otherPeople[0].userName);
+  get getFousedPeople() {
+    if (this.people.identity) {
+      console.log('focused:', this.people.otherPeople[0].userName);
       this.people.setFoused(this.people.otherPeople[0].userName);
       return this.people.otherPeople[0].userName;
     }

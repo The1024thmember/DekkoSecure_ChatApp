@@ -8,6 +8,10 @@ export default class MessageBoxComponent extends Component {
   @service mouse;
   @tracked move = false;
   @tracked lastLocation = this.mouse.position;
+  @service router;
+  @service people;
+  @service chatdata;
+
   setMove(toMove) {
     this.move = toMove;
   }
@@ -51,5 +55,15 @@ export default class MessageBoxComponent extends Component {
       this.setLastLocation(this.mouse.position);
     }
     this.setMove(!this.move);
+  }
+
+  @action
+  markAsRead(contact,message) {
+    this.people.setFoused(contact);
+    this.router.transitionTo('chatwindow', `${contact}`);
+    console.log("before:",this.chatdata.current);
+    this.chatdata.setCurrent(contact,'');
+    this.chatdata.setHistory(contact,[1,message]);
+    console.log("after:",this.chatdata.current);
   }
 }

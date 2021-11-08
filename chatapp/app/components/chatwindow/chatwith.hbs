@@ -3,10 +3,11 @@
     <div class="chat-container-inner">
         <Contacts::Nav @contacts={{this.getContacts}}/>
         <div class="chat-container-inside">
-            <Chatwindow::Messagehistory @history = {{@chatdata}} />
-            <Chatwindow::Replybox />
+            <Chatwindow::Messagehistory @history = {{this.getHistory}} />
+            <Chatwindow::Replybox {{ on 'change' this.setReply}} />
         </div>
     </div>
-    <Popup::Messagebox />
-    <Popup::Messagebox />
+    {{#each this.getCurrent as |message|}}
+      <Popup::Messagebox @message={{message}}/>
+    {{/each}}
 </div>
