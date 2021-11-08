@@ -11,7 +11,7 @@ export default class SignRoute extends Route {
         'Content-Type': 'application/json',
       },
     };
-    let response = await fetch('/api/users.json', settings);
+    let response = await fetch('https://sochat.xyz/SoChat/users', settings);
     let data = await response.json();
 
     this.people.getContacts(data);

@@ -1,3 +1,7 @@
 <div class="reply">
-    reply something ...
+    <input {{on 'change' this.updateValue}}/>
+    <button {{on 'click' this.onSend}}>Send</button>
+    {{#each  this.replydata as |reply|}}
+    <p>:) {{reply.sender}}:{{reply.message}}</p>
+    {{/each}}
 </div>

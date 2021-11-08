@@ -1,0 +1,5 @@
+1. when click the menu to change router, the message popup will change its position where mouse is clicked
+2. when direct to the chat window with the contact who sent the popUp, the popUp will not disapper. It should
+disapper and the window should have what the popup includes as history.
+3. The new message won't update as the route is not update，I used currentArray to deal with this, but it is a bit lagging for the popUp to disappear when clicking. Use this solution, the popUp message will not stick on the nav
+item when change routing anymore, but the initial position is a problem.

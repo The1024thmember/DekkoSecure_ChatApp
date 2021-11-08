@@ -7,7 +7,7 @@ export default class ChatwithComponent extends Component {
   @service mouse;
   @service people;
   @service chatdata;
-  /*
+  @tracked replydata = this.chatdata.currentArray;
   @tracked current;
 
   setCurrent(value){
@@ -23,9 +23,10 @@ export default class ChatwithComponent extends Component {
       }
     })
     this.setCurrent(temp);
+    console.log("this.current:",this.current);
     return this.current;
   };
-  */
+  
 
   get getIdentity() {
     let identity = { userName: this.people.identity, status: 'active' };
@@ -43,6 +44,7 @@ export default class ChatwithComponent extends Component {
   @action
   getDownPosition(event) {
     this.mouse.updatePosition([event.pageX, event.pageY]);
+    this.replydata = this.chatdata.currentArray;
   }
 
   @action
