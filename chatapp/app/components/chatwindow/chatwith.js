@@ -9,6 +9,7 @@ export default class ChatwithComponent extends Component {
   @service chatdata;
   @tracked replydata = this.chatdata.currentArray;
   @tracked current;
+  @tracked firstLoad = true;
 
   setCurrent(value){
     this.current = value;
@@ -44,7 +45,30 @@ export default class ChatwithComponent extends Component {
   @action
   getDownPosition(event) {
     this.mouse.updatePosition([event.pageX, event.pageY]);
-    this.replydata = this.chatdata.currentArray;
+
+    if (this.firstLoad){
+      this.firstLoad = false;
+      const getUserChatData = async () => {
+        let data;
+        var url = new URL('https://sochat.xyz/SoChat/messages?');
+        const params = {'user':this.people.identity};
+        Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
+    
+        let response = await fetch(url);
+        [data] = await response.json();
+        if (data){
+          this.chatdata.setOld(data.sender,data.date,data.message);
+          console.log("chatdatainmodel:",this.chatdata.current);
+          //here is the problem, since if there's no new data come, it won't execute this code, so replydata won't modify
+        }
+        this.replydata = this.chatdata.currentArray;
+      }
+      getUserChatData();
+      
+      setInterval(async () => {
+        getUserChatData();
+      }, 1000);
+    }
   }
 
   @action

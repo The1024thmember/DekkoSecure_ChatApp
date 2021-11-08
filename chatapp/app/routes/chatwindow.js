@@ -7,7 +7,7 @@ export default class ChatwindowRoute extends Route {
 
   model() {
     let data;
-    
+    /*
     const getUserChatData = async () => {
       var url = new URL('https://sochat.xyz/SoChat/messages?');
       const params = {'user':this.people.identity};
@@ -17,7 +17,6 @@ export default class ChatwindowRoute extends Route {
       [data] = await response.json();
       if (data){
         this.chatdata.setOld(data.sender,data.date,data.message);
-        //this.chatdata.setCurrentArray();
         console.log("chatdatainmodel:",this.chatdata.current);
       }
     }
@@ -26,5 +25,6 @@ export default class ChatwindowRoute extends Route {
     setInterval(async () => {
       getUserChatData();
     }, 1000);
+    */
   }
 }
