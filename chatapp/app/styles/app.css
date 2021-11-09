@@ -162,9 +162,11 @@
 
   /*********************Popupr*********************/
   .popup {
-    width:100px;
-    height:100px;
-    background: #3e8e41;
+    width:fit-content;
+    max-width: 150px;
+    min-width: 60px;
+    height:50px;
+    background: #e48732;
     position: absolute;
     border-radius: .4em;
     top:400px;
@@ -175,11 +177,17 @@
     display: flex;
     justify-content: space-between;
     height:20px;
-    font-size: small;
+    font-size:0.5rem;
+  }
+  .popup-header > span {
+    position: relative;
+    margin-left: 3px;
+    margin-right: auto;
   }
 
   .popup-message {
-    margin:5px;
+    margin:0px 5px 5px 5px;
+    font-size:1rem;
   }
   
   .popup:after {
@@ -190,19 +198,19 @@
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-top-color: #3e8e41;
+    border-top-color: #e48732;
     border-bottom: 0;
-    margin-left: -20px;
-    margin-bottom: -20px;
+    margin-left: -10px;
+    margin-bottom: -10px;
   }
 
   .pin {
     position: relative;
     top:0px;
     left:0px;
-    width:20px;
-    height:20px;
-    background-color: #ce792b;
+    width:15px;
+    height:15px;
+    background-color: black;
   }
   
   /****************************chat history *************************/
@@ -234,19 +242,27 @@
   }
 
   .message-bubble {
-    border-radius: 20% 5%;
+    border-radius: 15px 5px;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    width: fit-content;
+    height: fit-content;
   }
   
   .send {
-    background-color: black;
+    background-color: #4caf50;
     color:white;
+    margin-right: 0px;
+    margin-left: auto;
   }
 
   .receive {
-    background-color: white;
+    background-color: #a2a2a2;
     color:black;
+    margin-right: auto;
+    margin-left: 0px;
   }
-  
+
   /*******reply box*********/
   .reply-container {
     width:600px;

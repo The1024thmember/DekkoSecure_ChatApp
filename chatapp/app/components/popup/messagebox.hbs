@@ -1,9 +1,9 @@
 <div class="popup" style={{if this.initial @message.position this.safeStyle}} >
     <div class="popup-header">
         <div class="pin" {{ on 'mouseup' this.handleUp}} {{ on 'mousedown' this.handleDown}}></div>
-        <p>{{@message.sender}}</p>
+        <span>{{@message.sender}}</span>
     </div>
     <div class="popup-message" {{ on 'click' (fn this.markAsRead @message.sender @message.message) }}>
-        <p>{{@message.message}}</p>
+        {{@message.message}}
     </div>
 </div>

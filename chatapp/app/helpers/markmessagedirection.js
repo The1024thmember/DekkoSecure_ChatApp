@@ -1,7 +1,11 @@
 export function markMessageDirection(data) {
   let tempData = JSON.parse(JSON.stringify(data))[0];
   let newData = {}
-  newData.status=tempData[0];
+  if (tempData[0] === 1){
+    newData.status='receive';
+  }else{
+    newData.status='send';
+  }
   newData.message=tempData[1];
   return newData;
 }
