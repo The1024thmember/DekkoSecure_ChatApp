@@ -25,10 +25,15 @@ export default class ChatdataService extends Service {
     //set the new arrived message either inside history or show as popUp
     //depends on the current chat window
     setCurrent(focused,contact,current){
-        //put into history
-        if(focused === contact){
+        if(focused === contact){ //put into history if the current window is the one who sending message
             this.setHistory(contact,current,1);
-        }else{ //put into popUp message
+        }else if (this.current[contact] && current){ //if there's old unread message from some one who is not in current window, 
+            //set the unread as history, and the new information as popUp
+            this.setHistory(contact,this.current[contact],1);
+            this.current[contact] = current;
+            this.setCurrentArray();
+        }
+        else{ //put into popUp message
             this.current[contact] = current;
             this.setCurrentArray();
         }
