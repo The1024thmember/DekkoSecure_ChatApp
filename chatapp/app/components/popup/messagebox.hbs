@@ -4,6 +4,6 @@
         <span>{{@message.sender}}</span>
     </div>
     <div class="popup-message" {{ on 'click' (fn this.markAsRead @message.sender @message.message) }}>
-        {{@message.message}}
+        {{popupmessage @message.message}}
     </div>
 </div>
