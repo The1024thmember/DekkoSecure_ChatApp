@@ -8,7 +8,7 @@
         </div>
     </div>
     
-    {{#each this.popUps as |message|}}
-      <Popup::Messagebox @message={{message}}/>
+    {{#each this.popUps as |message index|}}
+      <Popup::Messagebox @message={{setmessageposition message index=index}}/>
     {{/each}}
 </div>

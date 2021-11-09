@@ -1,4 +1,4 @@
-<div class="popup" style={{this.safeStyle}} >
+<div class="popup" style={{if this.initial @message.position this.safeStyle}} >
     <div class="pin" {{ on 'mouseup' this.handleUp}} {{ on 'mousedown' this.handleDown}}></div>
     <div {{ on 'click' (fn this.markAsRead @message.sender @message.message) }}>
         <p>{{@message.sender}}</p>

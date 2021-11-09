@@ -10,6 +10,7 @@ export default class MessageBoxComponent extends Component {
   @service people;
   @service chatdata;
 
+  @tracked initial = true;
   @tracked move = false;
   @tracked lastLocation = this.mouse.position; //need to change a customrized value, otherwise the popup will follow the cursor
   
@@ -39,6 +40,7 @@ export default class MessageBoxComponent extends Component {
     }
   }
 
+
   escapeCSS(css) {
     return css;
   }
@@ -46,6 +48,7 @@ export default class MessageBoxComponent extends Component {
   //mouseDown to set the PopUp message movable
   @action
   handleDown() {
+    this.initial = false;
     this.setMove(true);
   }
 
