@@ -245,6 +245,7 @@
     border-radius: 15px 5px;
     margin-bottom: 10px;
     padding: 8px 10px;
+    max-width: 80%;
     width: fit-content;
     height: fit-content;
   }
