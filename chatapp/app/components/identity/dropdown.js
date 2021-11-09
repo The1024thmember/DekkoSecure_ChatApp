@@ -6,6 +6,8 @@ import { inject as service } from '@ember/service';
 export default class DropDownComponent extends Component {
   @service('people') confirmPeople;
   @tracked people = '';
+
+  //get the user's identity
   @action
   choosePeople(event) {
     this.people = event.target.innerHTML;
@@ -13,6 +15,7 @@ export default class DropDownComponent extends Component {
 
     let contacts = [];
     this.confirmPeople.contacts.forEach((element) => {
+      //change the status number into string
       if (element.userName !== this.confirmPeople.identity) {
         let status;
         if (element.status === 0) {

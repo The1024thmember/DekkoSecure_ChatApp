@@ -53,6 +53,7 @@ export default class ChatdataService extends Service {
         const keys = Object.keys(this.current);
         this.currentArray = [];
         keys.forEach((key)=>{
+          //if the current massage is not empty
           if (this.current[key]){
             this.currentArray.push({"sender":key,"message":this.current[key]});
           }

@@ -1,5 +1,5 @@
 <div class="reply">
-    <input {{on 'change' this.updateValue}}/>
+    <input value={{@unsent}} {{on 'input' this.updateValue}}/>
     <button {{on 'click' this.onSend}}>Send</button>
     {{#each  this.replydata as |reply|}}
     <p>:) {{reply.sender}}:{{reply.message}}</p>

@@ -9,7 +9,7 @@ export default class ChatwithComponent extends Component {
   @service chatdata;
 
   //To make the popUp render correctly
-  @tracked replydata = this.chatdata.currentArray;
+  @tracked popUps = this.chatdata.currentArray;
 
   //To make the history render correctly
   @tracked history = this.chatdata.history[this.people.focused];
@@ -17,6 +17,8 @@ export default class ChatwithComponent extends Component {
   //To initial the setInterval
   @tracked firstLoad = true;
 
+  //Keep records of the unsent value
+  @tracked unsent = this.chatdata.unsend[this.people.focused];
 
   get getIdentity() {
     let identity = { userName: this.people.identity, status: 'active' };
@@ -46,12 +48,16 @@ export default class ChatwithComponent extends Component {
     
         let response = await fetch(url);
         [data] = await response.json();
+        //when there's new data, chanege the current data accordinly
         if (data){
           this.chatdata.setOld(this.people.focused,data.sender,data.date,data.message);
-          console.log("chatdatainmodel:",this.chatdata.current);
         }
+        //refresh the history data
         this.history = this.chatdata.history[this.people.focused];
-        this.replydata = this.chatdata.currentArray;
+        //refresh the popUp data
+        this.popUps = this.chatdata.currentArray;
+        //refresh the unsend data
+        this.unsent = this.chatdata.unsend[this.people.focused];
       }
       getUserChatData();
       
@@ -61,9 +67,4 @@ export default class ChatwithComponent extends Component {
     }
   }
 
-  //Set action for reply
-  @action
-  setReply(event) {
-    
-  }
 }

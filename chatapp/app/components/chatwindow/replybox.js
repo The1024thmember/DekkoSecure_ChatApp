@@ -6,19 +6,19 @@ import { inject as service } from '@ember/service';
 export default class StatusmenComponent extends Component {
   @service chatdata;
   @service people;
+  
+  // The current Input value
   @tracked inputValue=this.chatdata.unsend[this.people.focused];
 
+  // set the unsent message equal to what it has in inputbox
   @action
   updateValue(event) {
     this.inputValue = event.target.value;
     this.chatdata.setUnsend(this.people.focused,event.target.value);
-    console.log("this.people.focused:",this.people.focused);
-    console.log("this.chatdata.unsend:",this.chatdata.unsend[this.people.focused]);
   }
 
   @action
   async onSend() {
-    console.log("chatdata.current:",this.chatdata.current);
 
     let settings = {
         method: 'PUT',
@@ -26,7 +26,7 @@ export default class StatusmenComponent extends Component {
           Accept: '/'
         }
       };
-
+      this.inputValue=this.chatdata.unsend[this.people.focused];
       var url = new URL('https://sochat.xyz/SoChat/messages?');
       const params = {'sender':this.people.identity,
                       'recipient': this.people.focused,
@@ -34,11 +34,10 @@ export default class StatusmenComponent extends Component {
                     };
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
       let response = await fetch(url, settings);
-      let data = await response;
-
+      //set the reply message into history
+      this.chatdata.setHistory(this.people.focused,this.inputValue,0);
       this.chatdata.setUnsend(this.people.focused,'');
       this.inputValue = '';
-      return data;
   }
 
 }

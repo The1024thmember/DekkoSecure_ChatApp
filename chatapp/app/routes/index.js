@@ -3,6 +3,8 @@ import { inject as service } from '@ember/service';
 
 export default class SignRoute extends Route {
   @service people;
+
+  //get the all the roles information
   async model() {
     let settings = {
       method: 'GET',
