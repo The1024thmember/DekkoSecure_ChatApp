@@ -73,12 +73,36 @@
     display: flex;
     flex-direction: row;
   }
+  
+  .header-subcontainer{
+    margin-left: auto; 
+    margin-right: 10px;
+    min-width: 50px;
+    height:30px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-weight: bold;
+  }
 
+  .header-subcontainer > *{
+    margin-right: 10px;
+  }
+
+  .arrow-down {
+    width: 0; 
+    height: 0; 
+    position: relative;
+    top:60%;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid black;
+  }
 
   /*********************nav bar*********************/
   /* Status Dot */
   .contacts-nav {
     background-color: #e6e6e6;
+    border: 1px solid white;
   }
 
   .vertical {
@@ -146,6 +170,17 @@
     top:400px;
     left:700px;
   }
+
+  .popup-header {
+    display: flex;
+    justify-content: space-between;
+    height:20px;
+    font-size: small;
+  }
+
+  .popup-message {
+    margin:5px;
+  }
   
   .popup:after {
     content: '';
@@ -170,8 +205,9 @@
     background-color: #ce792b;
   }
   
+  /****************************chat history *************************/
   .chat-container {
-    border:1px solid black;
+    border: 1px solid white;;
     width:800px;
     height:540px;
   }
@@ -186,14 +222,57 @@
     flex-direction: column;
   }
 
-  .messagehistory {
+  .history-message-container {
     width:600px;
     height:350px;
-    border:1px solid black;
+    border:1px solid white;
+    overflow-y: auto;
   }
+
+  .history-message-inner-container {
+    margin:10px;
+  }
+
+  .message-bubble {
+    border-radius: 20% 5%;
+  }
+  
+  .send {
+    background-color: black;
+    color:white;
+  }
+
+  .receive {
+    background-color: white;
+    color:black;
+  }
+  
   /*******reply box*********/
-  .reply {
+  .reply-container {
     width:600px;
     height:146px;
-    border:1px solid black;
+    border:2px solid #e6e4e4;
+  }
+  .reply-inner-container {
+    margin:10px;
+    height: 60%;
+    width: auto;
+  }
+  .reply-input {
+    resize: none;
+    font-size: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    width:100%;
+    height:90%;
+    background-color: #f4f6f8;
+    border:none;
+  }
+  .reply-input:focus{
+    outline: 0;
+  }
+
+  .reply-button {
+    margin-left: auto; 
+    margin-right: 0px;
   }

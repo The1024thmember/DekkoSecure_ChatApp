@@ -1,7 +1,6 @@
-<div class="reply">
-    <input value={{@unsent}} {{on 'input' this.updateValue}}/>
-    <button {{on 'click' this.onSend}}>Send</button>
-    {{#each  this.replydata as |reply|}}
-    <p>:) {{reply.sender}}:{{reply.message}}</p>
-    {{/each}}
+<div class="reply-container">
+    <div class="reply-inner-container">
+        <textarea autofocus class="reply-input" value={{@unsent}} {{on 'input' this.updateValue}}/>
+        <button class="reply-button" {{on 'click' this.onSend}}>Send</button>
+    </div>
 </div>
