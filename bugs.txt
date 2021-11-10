@@ -1,3 +1,2 @@
 1. When a popUp be deleted either by clicking on it or by go to the nav, the rest of PopUp position will reset to initial position.
 2. How to keep the message box stick on the most recent history
-3. Import the pin button icon and the shift to top icon
