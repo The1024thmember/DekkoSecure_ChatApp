@@ -42,7 +42,7 @@ h3 {
 @media (max-width: 800px) {
   .chat-container {
     height:100%;
-    width:100%;
+    width:600px;
   }
 
   .chat-container-inner {
@@ -71,6 +71,15 @@ h3 {
     flex:7;
     border:1px solid white;
     overflow-y: auto;
+  }
+
+  .message-bubble {
+    border-radius: 15px 5px;
+    margin-bottom: 10px;
+    padding: 8px 10px;
+    max-width: 350px;
+    width: fit-content;
+    height: fit-content;
   }
 
 }
@@ -262,6 +271,9 @@ h3 {
   }
 
   .popup-message {
+    width:fit-content;
+    max-width: 150px;
+    min-width: 60px;
     margin:0px 5px 5px 5px;
     font-size:1rem;
     cursor: pointer;
@@ -324,7 +336,7 @@ h3 {
     border-radius: 15px 5px;
     margin-bottom: 10px;
     padding: 8px 10px;
-    max-width: 80%;
+    max-width: 450px;
     width: fit-content;
     height: fit-content;
   }
