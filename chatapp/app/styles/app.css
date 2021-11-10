@@ -264,6 +264,7 @@ h3 {
   .popup-message {
     margin:0px 5px 5px 5px;
     font-size:1rem;
+    cursor: pointer;
   }
   
   .popup:after {
@@ -291,7 +292,8 @@ h3 {
   
   /****************************chat history *************************/
   .chat-container {
-    height:90%;
+    height:600px;
+    width:800px;
   }
 
   .chat-container-inner {
