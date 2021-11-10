@@ -3,11 +3,10 @@ import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
 import { inject as service } from '@ember/service';
 
-export default class ReplyBoxComponent extends Component {
+export default class StatusmenComponent extends Component {
   @service chatdata;
   @service people;
-  @service router;
-
+  
   // The current Input value
   @tracked inputValue=this.chatdata.unsend[this.people.focused];
 
@@ -35,9 +34,7 @@ export default class ReplyBoxComponent extends Component {
                       'message': this.inputValue,
                     };
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-      if(this.people.identity){
-        let response = await fetch(url, settings);
-      }
+      let response = await fetch(url, settings);
       //set the reply message into history
       this.chatdata.setHistory(this.people.focused,this.inputValue,0);
       this.chatdata.setUnsend(this.people.focused,'');
@@ -61,11 +58,7 @@ export default class ReplyBoxComponent extends Component {
                       'message': this.inputValue,
                     };
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-      if(this.people.identity){
-        let response = await fetch(url, settings);
-      }else{
-          this.router.transitionTo('/');
-      }
+      let response = await fetch(url, settings);
       //set the reply message into history
       this.chatdata.setHistory(this.people.focused,this.inputValue,0);
       this.chatdata.setUnsend(this.people.focused,'');

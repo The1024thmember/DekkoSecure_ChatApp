@@ -1,4 +1,4 @@
-export function setPopUpPosition(message,index) {
+export function setMessagePosition(message,index) {
     var w = window.innerWidth;
     let newMessage = JSON.parse(JSON.stringify(message));
     let left = parseInt(JSON.parse(JSON.stringify(index)).index);
@@ -12,5 +12,5 @@ export function setPopUpPosition(message,index) {
     return newMessage;
   }
   
-  export default Ember.Helper.helper(setPopUpPosition);
+  export default Ember.Helper.helper(setMessagePosition);
   
