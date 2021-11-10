@@ -63,8 +63,12 @@ export default class ChatwithComponent extends Component {
       
       setInterval(async () => {
         getUserChatData();
+        //Adding this will allow the screen auto foucs on the last message this contact send
+        //but in the mean time, when the user try to scroll the chat history, it will have bug
+        /*
         let chatHistoryContainer = document.getElementById("chathistory");
         chatHistoryContainer.scrollTop = chatHistoryContainer.scrollHeight;
+        */
       }, 1000);
     }
   }

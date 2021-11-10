@@ -1,4 +1,4 @@
-<div class="chat-container" {{ on "mousemove" this.getDownPosition}}>
+<div class="chat-container" {{on "mousemove" this.getDownPosition}}>
     <Chatwindow::Header @identity={{this.getIdentity}}/>
     <div class="chat-container-inner">
         <Contacts::Nav @contacts={{this.getContacts}}/>
