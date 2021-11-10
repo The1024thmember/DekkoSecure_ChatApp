@@ -6,7 +6,8 @@ import { inject as service } from '@ember/service';
 export default class StatusmenComponent extends Component {
   @service chatdata;
   @service people;
-  
+  @service router;
+
   // The current Input value
   @tracked inputValue=this.chatdata.unsend[this.people.focused];
 
@@ -34,7 +35,12 @@ export default class StatusmenComponent extends Component {
                       'message': this.inputValue,
                     };
       Object.keys(params).forEach(key => url.searchParams.append(key, params[key]));
-      let response = await fetch(url, settings);
+
+      if(this.people.identity){
+        let response = await fetch(url, settings);
+      }else{
+        this.router.transitionTo('/');
+      }
       //set the reply message into history
       this.chatdata.setHistory(this.people.focused,this.inputValue,0);
       this.chatdata.setUnsend(this.people.focused,'');
@@ -63,6 +69,7 @@ export default class StatusmenComponent extends Component {
       this.chatdata.setHistory(this.people.focused,this.inputValue,0);
       this.chatdata.setUnsend(this.people.focused,'');
       this.inputValue = '';
+      
   }
 
 }
