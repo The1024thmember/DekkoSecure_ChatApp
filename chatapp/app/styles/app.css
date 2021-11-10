@@ -253,7 +253,7 @@ h3 {
     max-width: 150px;
     min-width: 60px;
     height:50px;
-    background: #e48732;
+    background: #f3ac69;
     position: absolute;
     border-radius: .4em;
   }
@@ -287,7 +287,7 @@ h3 {
     width: 0;
     height: 0;
     border: 20px solid transparent;
-    border-top-color: #e48732;
+    border-top-color: #f3ac69;
     border-bottom: 0;
     margin-left: -10px;
     margin-bottom: -10px;
