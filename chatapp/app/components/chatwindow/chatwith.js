@@ -63,6 +63,8 @@ export default class ChatwithComponent extends Component {
       
       setInterval(async () => {
         getUserChatData();
+        let chatHistoryContainer = document.getElementById("chathistory");
+        chatHistoryContainer.scrollTop = chatHistoryContainer.scrollHeight;
       }, 1000);
     }
   }

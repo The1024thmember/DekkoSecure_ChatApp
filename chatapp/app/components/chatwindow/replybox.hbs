@@ -1,6 +1,6 @@
 <div class="reply-container">
     <div class="reply-inner-container">
-        <textarea autofocus class="reply-input" value={{@unsent}} {{on 'input' this.updateValue}}/>
+        <textarea autofocus class="reply-input" value={{@unsent}} {{on 'input' this.updateValue}} {{on 'keyup' this.checkEnter}} />
         <button class="reply-button" {{on 'click' this.onSend}}>Send</button>
     </div>
 </div>
