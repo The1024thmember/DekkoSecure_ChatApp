@@ -247,8 +247,6 @@ h3 {
     background: #e48732;
     position: absolute;
     border-radius: .4em;
-    top:400px;
-    left:700px;
   }
 
   .popup-header {
@@ -293,11 +291,9 @@ h3 {
   
   /****************************chat history *************************/
   .chat-container {
-    height:600px;
-    width:800px;
-    position: relative;
-    top:10vh;
+
   }
+  
   .chat-container-inner {
     height:100%;
     width:100%;
