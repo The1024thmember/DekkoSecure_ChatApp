@@ -3,7 +3,7 @@ export function splitMessage(message) {
     let newMessage = JSON.parse(JSON.stringify(message));
     newMessage = newMessage[0];
     let spacedMessage='';
-    if (w<800){ //every 25 chars add a new space
+    if (w<800){ //every 20 chars add a new space
       if (newMessage.length > 20){
         for(var i = 0; i < newMessage.length/20; i++){
             if (newMessage.slice(i*20,(i+1)*20).includes(' ')){
@@ -14,7 +14,7 @@ export function splitMessage(message) {
         }
         return spacedMessage;
       }
-    }else{ //every 30 chars add a new space
+    }else{ //every 28 chars add a new space
         if (newMessage.length > 28){
             for(var i = 0; i < newMessage.length/28; i++){
               if (newMessage.slice(i*28,(i+1)*28).includes(' ')){
