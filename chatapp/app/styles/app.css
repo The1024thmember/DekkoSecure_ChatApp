@@ -291,9 +291,9 @@ h3 {
   
   /****************************chat history *************************/
   .chat-container {
-
+    height:90%;
   }
-  
+
   .chat-container-inner {
     height:100%;
     width:100%;
