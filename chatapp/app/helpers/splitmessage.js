@@ -3,24 +3,24 @@ export function splitMessage(message) {
     let newMessage = JSON.parse(JSON.stringify(message));
     newMessage = newMessage[0];
     let spacedMessage='';
-    if (w<800){ //every 38 chars add a new space
-      if (newMessage.length > 38){
-        for(var i = 0; i < newMessage.length/38; i++){
-            if (newMessage.slice(i*38,(i+1)*38).includes(' ')){
-              spacedMessage+=newMessage.slice(i*38,(i+1)*38);
+    if (w<800){ //every 25 chars add a new space
+      if (newMessage.length > 20){
+        for(var i = 0; i < newMessage.length/20; i++){
+            if (newMessage.slice(i*20,(i+1)*20).includes(' ')){
+              spacedMessage+=newMessage.slice(i*20,(i+1)*20);
             }else{
-              spacedMessage+=newMessage.slice(i*38,(i+1)*38) + ' ';
+              spacedMessage+=newMessage.slice(i*20,(i+1)*20) + ' ';
             } 
         }
         return spacedMessage;
       }
-    }else{ //every 50 chars add a new space
-        if (newMessage.length > 50){
-            for(var i = 0; i < newMessage.length/50; i++){
-              if (newMessage.slice(i*50,(i+1)*50).includes(' ')){
-                spacedMessage+=newMessage.slice(i*50,(i+1)*50);
+    }else{ //every 30 chars add a new space
+        if (newMessage.length > 28){
+            for(var i = 0; i < newMessage.length/28; i++){
+              if (newMessage.slice(i*28,(i+1)*28).includes(' ')){
+                spacedMessage+=newMessage.slice(i*28,(i+1)*28);
               }else{
-                spacedMessage+=newMessage.slice(i*50,(i+1)*50) + ' ';
+                spacedMessage+=newMessage.slice(i*28,(i+1)*28) + ' ';
               } 
             }
             return spacedMessage;
