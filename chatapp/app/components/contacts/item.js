@@ -2,7 +2,7 @@ import Component from '@glimmer/component';
 import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
-export default class ChatwithComponent extends Component {
+export default class ItemComponent extends Component {
   @service people;
   @service router;
   @service chatdata;

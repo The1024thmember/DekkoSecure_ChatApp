@@ -1,4 +1,4 @@
-export function popUpMessage(message) {
+export function resetPopUpMessage(message) {
     //14 chars, what exceeds 14 chars will change into ...
     let newMessage = JSON.parse(JSON.stringify(message));
     newMessage = newMessage[0];
@@ -8,4 +8,4 @@ export function popUpMessage(message) {
     return newMessage;
   }
   
-  export default Ember.Helper.helper(popUpMessage);
+  export default Ember.Helper.helper(resetPopUpMessage);

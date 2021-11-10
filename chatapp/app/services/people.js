@@ -1,5 +1,6 @@
 import Service from '@ember/service';
 import { tracked } from '@glimmer/tracking';
+
 export default class PeopleService extends Service {
   @tracked contacts = []; //all the users include myself
   @tracked otherPeople = []; //all the users exclude myself

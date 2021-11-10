@@ -17,6 +17,6 @@
         <span>{{@message.sender}}</span>
     </div>
     <div class="popup-message" {{ on 'click' (fn this.markAsRead @message.sender @message.message) }}>
-        {{popupmessage @message.message}}
+        {{resetPopUpMessage @message.message}}
     </div>
 </div>
