@@ -1,7 +1,7 @@
 <div class="dropdown">
   <input class="dropinput bold" value = {{this.people}}  />
   <div class="dropdown-content">
-    {{#each @people as |person|}}
+    {{#each @people as |person index|}}
       <p {{on "click" this.choosePeople}}>{{person.userName}}</p>
     {{/each}}
   </div>
