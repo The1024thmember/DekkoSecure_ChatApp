@@ -1,9 +1,9 @@
 <div class="contacts-nav">
-    {{#each  @contacts.contacts as |contact|}}
+    {{#each  @contacts.contacts as |contact index|}}
       {{#if (eq contact.userName @contacts.focused) }}
-        <Contacts::Item @contact={{enable (addattribute contact)}}/>
+        <Contacts::Item data-test-{{index}} @contact={{enable (addattribute contact)}}/>
       {{else}}
-        <Contacts::Item @contact={{enable contact}}/>
+        <Contacts::Item data-test-{{index}} @contact={{enable contact}}/>
       {{/if}}
     {{/each}}
 </div>
