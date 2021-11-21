@@ -32,6 +32,7 @@ export default class DropDownComponent extends Component {
 
 
     //send hupspot choosepeople
+    /*
     let settings = {
       method: 'POST',
       headers: {
@@ -40,10 +41,52 @@ export default class DropDownComponent extends Component {
       },
       body: JSON.stringify({
         "Identifier":"xiaoCai",
-        "Event name":"pe21033607_chooseuser"
+        "Event name":""
       })
     };
     let response = await fetch('https://api/hubspot.com/events/v3/send', settings);
     let data = await response.json();
+    */
+
+
+    var http = require("https");
+
+    var options = {
+      "method": "POST",
+      "hostname": "api.hubapi.com",
+      "port": null,
+      "path": "/events/v3/send?hapikey=1e05d894-705e-48d3-8dec-8d859259f619",
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json"
+      }
+    };
+
+    var req = http.request(options, function (res) {
+      var chunks = [];
+
+      res.on("data", function (chunk) {
+        chunks.push(chunk);
+      });
+
+      res.on("end", function () {
+        var body = Buffer.concat(chunks);
+        console.log(body.toString());
+      });
+    });
+
+    req.write(JSON.stringify({
+      utk: 'string',
+      email: 'zzx1786728683@gmail.com',
+      eventName: 'pe21033607_chooseuser',
+      properties: {
+        additionalProp1: 'string',
+        additionalProp2: 'string',
+        additionalProp3: 'string'
+      },
+      occurredAt: '2021-11-21T08:21:04.880Z',
+      objectId: 'string'
+    }));
+    req.end();
   }
 }
