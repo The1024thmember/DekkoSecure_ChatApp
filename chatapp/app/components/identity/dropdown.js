@@ -50,7 +50,7 @@ export default class DropDownComponent extends Component {
         objectId: 123
       })
     };
-    let response = await fetch('https://api/hubspot.com/events/v3/send?hapikey=1e05d894-705e-48d3-8dec-8d859259f619', settings);
+    let response = await fetch('https://api.hubspot.com/events/v3/send?hapikey=1e05d894-705e-48d3-8dec-8d859259f619', settings);
     let data = await response.json();
     
   
