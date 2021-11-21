@@ -32,25 +32,29 @@ export default class DropDownComponent extends Component {
 
 
     //send hupspot choosepeople
-    /*
+    
     let settings = {
       method: 'POST',
       headers: {
-        Accept: 'text/plain',
+        'accept': 'application/json',
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        "Identifier":"xiaoCai",
-        "Event name":""
+        utk: 'string',
+        email: 'zzx1786728683@gmail.com',
+        eventName: 'pe21033607_chooseuser',
+        properties: {
+          amount: '12', city: 'Sydney', country: 'Australia'
+        },
+        occurredAt: '2021-11-21T08:21:04.880Z',
+        objectId: 123
       })
     };
-    let response = await fetch('https://api/hubspot.com/events/v3/send', settings);
+    let response = await fetch('https://api/hubspot.com/events/v3/send?hapikey=1e05d894-705e-48d3-8dec-8d859259f619', settings);
     let data = await response.json();
-    */
-
-
-    var http = require("https");
-
+    
+  
+    /*
     var options = {
       "method": "POST",
       "hostname": "api.hubapi.com",
@@ -88,5 +92,6 @@ export default class DropDownComponent extends Component {
       objectId: 'string'
     }));
     req.end();
+    */
   }
 }
