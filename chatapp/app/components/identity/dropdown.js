@@ -30,9 +30,28 @@ export default class DropDownComponent extends Component {
     });
     this.confirmPeople.getOtherPeople(contacts);
 
+    
+    //set HUBSPOT identity
+    var _hsq = window._hsq = window._hsq || [];
+    _hsq.push(["identify",{
+      email: `${this.confirmPeople.identity}@test.com`,
+      id: this.confirmPeople.identity.charCodeAt(0),
+      chosenIdentity:`${this.confirmPeople.identity}`,
+    }]);
+
 
     //send hupspot choosepeople
-    
+    _hsq.push(['trackCustomBehavioralEvent',{
+      name:'pe21033607_chooseuser',
+      properties:{
+        amount:12,
+        city:'ACT',
+        country:'Australia',
+        chosenIdentity:`${this.confirmPeople.identity}`
+      }
+    }]);
+
+    /*//Make API CALL to track event using Hupspot
     let settings = {
       method: 'POST',
       headers: {
@@ -46,54 +65,15 @@ export default class DropDownComponent extends Component {
         email: 'zzx1786728683@gmail.com',
         eventName: 'pe21033607_chooseuser',
         properties: {
-          amount: '12', city: 'Sydney', country: 'Australia'
+          amount: '112', city: 'CANS', country: 'Australia'
         },
-        occurredAt: '2021-11-21T08:21:04.880Z',
-        objectId: 123
+        occurredAt: '2021-11-21T08:21:14.880Z',
+        objectId: 2
       })
     };
     let response = await fetch('https://api.hubspot.com/events/v3/send?hapikey=1e05d894-705e-48d3-8dec-8d859259f619', settings);
     let data = await response.json();
-    
-  
-    /*
-    var options = {
-      "method": "POST",
-      "hostname": "api.hubapi.com",
-      "port": null,
-      "path": "/events/v3/send?hapikey=1e05d894-705e-48d3-8dec-8d859259f619",
-      "headers": {
-        "accept": "application/json",
-        "content-type": "application/json"
-      }
-    };
-
-    var req = http.request(options, function (res) {
-      var chunks = [];
-
-      res.on("data", function (chunk) {
-        chunks.push(chunk);
-      });
-
-      res.on("end", function () {
-        var body = Buffer.concat(chunks);
-        console.log(body.toString());
-      });
-    });
-
-    req.write(JSON.stringify({
-      utk: 'string',
-      email: 'zzx1786728683@gmail.com',
-      eventName: 'pe21033607_chooseuser',
-      properties: {
-        additionalProp1: 'string',
-        additionalProp2: 'string',
-        additionalProp3: 'string'
-      },
-      occurredAt: '2021-11-21T08:21:04.880Z',
-      objectId: 'string'
-    }));
-    req.end();
     */
+
   }
 }
