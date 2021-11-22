@@ -38,6 +38,8 @@ export default class DropDownComponent extends Component {
       headers: {
         'accept': 'application/json',
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '1e05d894-705e-48d3-8dec-8d859259f619',
+        'mode':'no-cors',
       },
       body: JSON.stringify({
         utk: 'string',
