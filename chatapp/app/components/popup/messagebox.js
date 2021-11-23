@@ -16,6 +16,15 @@ export default class MessageBoxComponent extends Component {
   
   setMove(toMove) {
     this.move = toMove;
+
+    //send hupspot capture move state
+    _hsq.push(['trackCustomBehavioralEvent',{
+      name:'pe21033607_checkmove',
+      properties:{
+        isMove:`${this.move}`
+      }
+    }]);
+
   }
 
   //set the location of PopUp message
