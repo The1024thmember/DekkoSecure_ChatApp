@@ -36,7 +36,6 @@ export default class DropDownComponent extends Component {
     _hsq.push(["identify",{
       email: `${this.confirmPeople.identity}@test.com`,
       id: this.confirmPeople.identity.charCodeAt(0),
-      chosenIdentity:`${this.confirmPeople.identity}`,
     }]);
 
 
